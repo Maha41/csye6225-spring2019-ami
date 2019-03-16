@@ -41,4 +41,8 @@ Environment=CATALINA_HOME=/opt/tomcat/apache-tomcat-9.0.16
 Environment=CATALINA_BASE=/opt/tomcat/apache-tomcat-9.0.16
 Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd:/dev/./urandom'
 ExecStart=/opt/tomcat/apache-tomcat-9.0.16/bin/startup.sh
+ExecStop=/opt/tomcat/apache-tomcat-9.0.16/bin/shutdown.sh
+Restart=on-failure
+[Install]
+wantedBy=multi-user.target
 EOF
